@@ -41,3 +41,4 @@ steps:
     runOptions: 'commands'
     commands: 'uptime'
     readyTimeout: '20000'
+    failOnStdErr: true
