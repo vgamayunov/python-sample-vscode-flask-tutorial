@@ -37,7 +37,8 @@ steps:
 
 - task: SSH@0
   inputs:
-    sshEndpoint: 'cc81_ssh'
+#    sshEndpoint: 'cc81_ssh'
+    sshEndpoint: 'centos78_privateip'
     runOptions: 'commands'
     commands: 'uptime'
     readyTimeout: '20000'
