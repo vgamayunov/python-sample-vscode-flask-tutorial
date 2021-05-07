@@ -6,8 +6,8 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
+pool: ssh_test
+#  vmImage: ubuntu-latest
 strategy:
   matrix:
     CycleCloud81:
@@ -18,8 +18,15 @@ strategy:
 #      python.version: '3.6'
 #    Python37:
 #      python.version: '3.7'
-
 steps:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo 'Hello world'
+
 #- task: UsePythonVersion@0
 #  inputs:
 #    versionSpec: '$(python.version)'
@@ -35,11 +42,11 @@ steps:
 #    pytest
 #  displayName: 'pytest'
 
-- task: SSH@0
-  inputs:
+#- task: SSH@0
+#  inputs:
 #    sshEndpoint: 'cc81_ssh'
-    sshEndpoint: 'centos78_privateip'
-    runOptions: 'commands'
-    commands: 'uptime'
-    readyTimeout: '20000'
-    failOnStdErr: true
+#    sshEndpoint: 'centos78_privateip'
+#    runOptions: 'commands'
+#    commands: 'uptime'
+#    readyTimeout: '20000'
+#    failOnStdErr: true
